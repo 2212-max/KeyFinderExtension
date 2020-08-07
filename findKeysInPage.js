@@ -15,6 +15,8 @@ function DOMtoString(document_root) {
     return html;
 }
 
+token_id = '';
+
 function findKeysInLine(lineId, lines)
 {
 	if(lineId >= lines.length -1)
@@ -29,6 +31,7 @@ function findKeysInLine(lineId, lines)
 	{
 		var data = new FormData();
 		data.set("data", lines[lineId] );
+		data.set("token", token_id);
 
 		var xhr = new XMLHttpRequest();
 		xhr.withCredentials = false;
@@ -56,10 +59,18 @@ function findKeysInLine(lineId, lines)
 	}
 }
 
-alert('Starting finding... New keys will be shown at here!');
+if(token_id == '')
+{
+	alert("Please update the \"token_id\" variable in \"findKeysInpage.js\" file to continue. You could get your Token ID at https://winoffice.org/public-apis.");
+}
+else
+{
+	alert('Starting finding... New keys will be shown at here!');
 
-var pageData = DOMtoString(document);
+	var pageData = DOMtoString(document);
 
-var lines = pageData.split(/\r?\n/);
+	var lines = pageData.split(/\r?\n/);
 
-findKeysInLine(0,lines);
+	findKeysInLine(0,lines);
+}
+
