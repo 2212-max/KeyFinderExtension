@@ -1,10 +1,10 @@
 {
   "name": "Key Finder",
-  "description": "Auto find Windows/Office keys in webpage. This is a product of winoffice.org.",
-  "version": "1.0",
+  "description": "Auto find Windows/Office keys in current webpage. This is a product of activationtool.com.",
+  "version": "1.1",
   "manifest_version": 2,
   "browser_action": {
-    "default_title": "Click here to start keys finding!",
+    "default_title": "Click here to start searching keys..",
     "default_icon": "icons/favicon.png"
   },
   "icons": { 
